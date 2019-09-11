@@ -1,3 +1,18 @@
+/* 
+-- ETAPE --
+
+ -- Choix de l'ordi
+ -- Choix du joueur
+ -- Comparaison
+ 
+ -- Les boutons
+ -- Selection du choix du joueur avec les boutons
+ -- Comparaison avec le nouveaux systeme
+ 
+ -- Amelioration
+
+*/
+
 // Variable
 
 let boutton = document.querySelectorAll("button"); //Cette variable querySelectionne tout les boutons qui sont dans l'achteumeleux.
