@@ -20,6 +20,10 @@ let choixOrdi; //C'est variable n'a pas de valeur.
 let choixUser; //Celle-ci non plus.
 let resultat = document.querySelector(".resultat");
 let divOrdi = document.querySelector('.ordi');
+let affichageJoueur = document.querySelector('.scoreJoueur');
+let affichageOrdi = document.querySelector('.scoreOrdi')
+let scoreHumain = 0;
+let scoreOrdi = 0;
 
 // choix du joueur
 function choixDuJoueur() { //
@@ -41,6 +45,8 @@ function choixDuJoueur() { //
         hasard()
         comparaison();
     }
+    affichageJoueur.value = scoreHumain;
+    affichageOrdi.value = scoreOrdi;
 };
 
 choixDuJoueur(); //La fonction est appeller ici.
@@ -52,10 +58,15 @@ function comparaison(){
     }
     else if((choixUser == "pierre" && choixOrdi == "feuille") || (choixUser == "feuille" && choixOrdi == "ciseaux") || (choixUser == "ciseaux" && choixOrdi == "pierre")){
         resultat.textContent = "Vous avez perdu";
+        scoreOrdi++;
     }
     else{
         resultat.textContent = "Vous avez gagner";
+        scoreHumain++;
     }
+    affichageJoueur.value = scoreHumain;
+    affichageOrdi.value = scoreOrdi;
+    finDePartie();
 }
 
 // choix de l'ordi
@@ -72,5 +83,13 @@ function hasard() {
     }
     console.log(" le choix de l'ordi : " + choixOrdi);
     divOrdi.textContent = choixOrdi;
+}
+
+function finDePartie() {
+    if (scoreHumain == 3) {
+        alert("Vous avez gagner!")
+    } else if (scoreOrdi == 3) {
+        alert("Vous avez perdue!")
+    }
 }
 
